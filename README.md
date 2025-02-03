@@ -111,5 +111,3 @@ The models were evaluated using the following metrics:
 
 (RandomForest typically performs best due to its ensemble nature.)
 
-## Contributing
-Contributions are welcome! Feel free to submit issues or pull requests to improve the project.
