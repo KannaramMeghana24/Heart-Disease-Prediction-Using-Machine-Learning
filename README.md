@@ -1,6 +1,6 @@
 # Heart Disease Prediction Using Machine Learning
 
-This repository contains a machine learning project for predicting the likelihood of heart disease based on clinical data. The project leverages multiple classification algorithms including **KNeighborsClassifier**, **DecisionTreeClassifier**, and **RandomForestClassifier** to compare their performance in predicting heart disease.
+This project utilizes machine learning algorithms to predict the presence of heart disease based on medical parameters. It includes preprocessing, model training, evaluation, and comparison across multiple classifiers like **K-Nearest Neighbors**, **Decision Tree**, and **Random Forest**.
 
 ---
 
@@ -38,25 +38,33 @@ You can find more details about the dataset [here](https://www.kaggle.com/datase
    - Provides better generalization and reduces overfitting.
 
 ## Project Workflow
-1. **Data Preprocessing**:
-   - Handle missing values (if any).
-   - Perform one-hot encoding for categorical features.
-   - Scale numerical features for KNN.
+1. **Data Collection**:
+   -Dataset containing heart disease-related patient data is loaded into the notebook.
+   -The dataset consists of 1025 rows and 14 attributes (both numerical and categorical).
 
-2. **Exploratory Data Analysis (EDA)**:
-   - Visualize feature distributions and correlations.
-   - Identify key predictors of heart disease.
+3. **Data Preprocessing**:
+   -Check for missing values
+   -Label Encoding: Categorical features like sex, chest_pain_type, thal, and slope are encoded     to numeric values.
+   -Feature Scaling (if applicable): Not strictly necessary for Decision Trees or Random
+    Forest, but important for KNN.
+   -Splitting dataset into training and test sets using train_test_split.
 
-3. **Model Training and Evaluation**:
-   - Split the data into training and testing sets.
-   - Train KNN, Decision Tree, and Random Forest models.
-   - Evaluate performance using metrics like accuracy, precision, recall, F1-score, and ROC-AUC.
+5. **Exploratory Data Analysis (EDA)**:
+   -Distribution plots for features like age, cholesterol, max heart rate, etc.
+   -Correlation heatmap to identify important features.
+   -Class distribution of target (presence/absence of heart disease).
 
-4. **Hyperparameter Tuning**:
-   - Optimize models using GridSearchCV or RandomizedSearchCV.
+7. **Model Training**:
+   -Train and evaluate the following models using the training set:
+   *K-Nearest Neighbors (KNN)
+   *Decision Tree Classifier
+   *Random Forest Classifier
 
-5. **Results Comparison**:
-   - Compare models based on evaluation metrics.
+9. **Model Evaluation**:
+   - Evaluate each model using:
+     *Accuracy score
+     *Confusion Matrix
+     *Classification Report (Precision, Recall, F1-score)
 
 ## Dependencies
 Install the required libraries using the following command:
@@ -74,8 +82,9 @@ pip install -r requirements.txt
 ## How to Run
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/heart-disease-prediction.git
-   cd heart-disease-prediction
+   git clone https://github.com/your-username/heart-disease-prediction-ml.git
+   cd heart-disease-prediction-ml
+
    ```
 
 2. Install dependencies:
@@ -89,7 +98,8 @@ pip install -r requirements.txt
    ```
    or
    ```bash
-   python heart_disease_prediction.py
+   jupyter notebook heart-disease-prediction-using-machine-learning.ipynb
+
    ```
 
 4. View the evaluation metrics and model comparison in the output.
@@ -105,9 +115,9 @@ The models were evaluated using the following metrics:
 ### Performance Summary:
 | Model                | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 |----------------------|----------|-----------|--------|----------|---------|
-| KNeighborsClassifier | xx%      | xx%       | xx%    | xx%      | xx%     |
-| DecisionTree         | xx%      | xx%       | xx%    | xx%      | xx%     |
-| RandomForest         | xx%      | xx%       | xx%    | xx%      | xx%     |
+| KNeighborsClassifier | 86.34%   | 86%       | 88%    | 87%      | 86%     |
+| DecisionTree         | 98.54%   | 100%      | 97%    | 99%      | 98.5%   |
+| RandomForest         | 100%     | 100%      | 100%   | 100%     | 100%    |
 
 (RandomForest typically performs best due to its ensemble nature.)
 
